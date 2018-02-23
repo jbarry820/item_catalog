@@ -1,9 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from database_bee_setup import Item, Base, User
+from database_bee_setup import Category, Item, Base, User
 
-engine = create_engine('sqlite:///cagegorywithusers.db')
+engine = create_engine('sqlite:///categorywithusers.db')
 # Bind the engine to the metadata of the Base class so that the
 # declaratives can be accessed through a DBSession instance
 Base.metadata.bind = engine
@@ -20,10 +20,10 @@ session = DBSession()
 
 
 # Create a user
-# User1 = User(name="Jim Barry", email="jbarry@pelicom.net",
-#              picture='https://pbs.twimg.com/profile_images/2671170543/18debd694829ed78203a5a36dd364160_400x400.png')
-# session.add(User1)
-# session.commit()
+User1 = User(name="Jim Barry", email="jbarry@pelicom.net",
+             picture='https://pbs.twimg.com/profile_images/2671170543/18debd694829ed78203a5a36dd364160_400x400.png')
+session.add(User1)
+session.commit()
 
 # Menu for Beekeeping Kits
 category1 = Category(user_id=1, name="Beekeeping Kits")
@@ -79,7 +79,7 @@ session.commit()
 item1 = Item(user_id=1, name="10 Frame Super Unassembled", description="10 Frame Super Unassembled.",
                      price="$13.20", category=category3)
 
-session.add(menuItem1)
+session.add(item1)
 session.commit()
 
 item2 = Item(user_id=1, name="10 Frame Super Assembled", description="10 Frame Super Assembled.",
@@ -114,19 +114,19 @@ session.commit()
 
 
 # Menu for Thyme for that
-categroy4 = Category(user_id=1, name="Miscellaneous")
+category4 = Category(user_id=1, name="Miscellaneous")
 
-session.add(categroy4)
+session.add(category4)
 session.commit()
 
 
-item1 = MenuItem(user_id=1, name="Plastic Closure", description="Plastic closure for screen bottom.",
+item1 = Item(user_id=1, name="Plastic Closure", description="Plastic closure for screen bottom.",
                      price="$1.20", category=category4)
 
 session.add(item1)
 session.commit()
 
-item2 = MenuItem(user_id=1, name="Entrance Reducer", description="Entrance Reducer - 8 or 10 Frame.",
+item2 = Item(user_id=1, name="Entrance Reducer", description="Entrance Reducer - 8 or 10 Frame.",
                      price="$1.20", category=category4)
 
 session.add(item2)
