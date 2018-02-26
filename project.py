@@ -272,14 +272,14 @@ def categoryItemsJSON(category_id):
 @app.route('/category/<int:category_id>/item/<int:item_id>/JSON')
 def categoryItemJSON(category_id,item_id):
     category = session.query(Category).filter_by(id=category_id).one()
-    Item_looking_for = session.query(Item).filter_by(id=category_id).one()
-    return jsonify(Item_looking_for=Item.serialize)
-
+    Item_looking_for = session.query(Item).filter_by(id=item_id,category_id=category_id).one()
+    return jsonify(Item_looking_for=Item_looking_for.serialize)
 
 @app.route('/category/JSON')
 def categoriesJSON():
     categories = session.query(Category).all()
     return jsonify(categories=[r.serialize for r in categories])
+
 
 # Show all categories
 @app.route('/')
