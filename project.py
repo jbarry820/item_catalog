@@ -280,7 +280,6 @@ def categoriesJSON():
     categories = session.query(Category).all()
     return jsonify(categories=[r.serialize for r in categories])
 
-
 # Show all categories
 @app.route('/')
 @app.route('/category/')
@@ -302,7 +301,7 @@ def newCategory():
         session.add(newCategory)
         flash('New Category %s Successfully Created' % newCategory.name)
         session.commit()
-        return redirect(url_for('showCategoryies'))
+        return redirect(url_for('showcategories'))
     else:
         return render_template('newCategory.html')
 
@@ -354,7 +353,7 @@ def showItem(category_id):
     if 'username' not in login_session or creator.id != login_session['user_id']:
         return render_template('publicitem.html', items=items, category=category, creator=creator)
     else:
-        return render_template('item.html', items=items, category=category, creator=creator)
+        return render_template('menu.html', items=items, category=category, creator=creator)
 
 
 # Create a new item item
