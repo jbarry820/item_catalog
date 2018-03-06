@@ -40,11 +40,11 @@
 		<div class="col-md-1"></div>
 	</div>
 	{% for category in catagories %}
-		<a href = "{{url_for('showItem', category_id = category.id)}}">
+		<a href = "{{url_for('showItems', category_id = category.id)}}">
 			<div class="row">
 				<div class="col-md-1"></div>
 					<div class="col-md-10 category-list">
-						<h3>{{restaurant.name}}</h3>
+						<h3>{{category.name}}</h3>
 					</div>
 				<div class="col-md-1"></div>
 			</div>

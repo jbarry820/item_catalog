@@ -13,14 +13,11 @@
 				<figcaption>{{ creator.name }}</figcaption>
 			</figure>
 			</h1>
-
 		</div>
 	</div>
 	<div class="row padding-top padding-bottom">
 		<div class="col-md-1"></div>
-		<div class="col-md-11 padding-none">
-
-		</div>
+		<div class="col-md-11 padding-none"></div>
 		<div class="col-md-7"></div>
 	</div>
 	<div class="row">
@@ -40,54 +37,44 @@
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-3">
-				<h2>Appetizers</h2>
+				<h2>Beekeeping Kits</h2>
 					{% for i in items %}
-						{% if i.course == 'Appetizer' %}
+						<div class="menu-item">
+							<h3>{{i.name}}</h3>
+							<p>{{i.description}}</p>
+							<p class="menu-price">{{i.price}}</p>
+						</div>
+					{% endfor %}
+			</div>
+			<div class="col-md-4">
+				<h2>Loaded Supers</h2>
+					{% for i in items %}
+						<div class="menu-item">
+							<h3>{{i.name}}</h3>
+							<p>{{i.description}}</p>
+							<p class="menu-price">{{i.price}}</p>
+						</div>
+					{% endfor %}
+			</div>
+			<div class="col-md-3">
+				<h2>Miscellaneous</h2>
+					{% for i in items %}
+						<div class="menu-item">
+							<h3>{{i.name}}</h3>
+							<p>{{i.description}}</p>
+							<p class="menu-price">{{i.price}}</p>\
+						</div>
+					{% endfor %}
+			</div>
+				<div class="col-md-3">
+					<h2>Supers</h2>
+						{% for i in items %}
 							<div class="menu-item">
 								<h3>{{i.name}}</h3>
 								<p>{{i.description}}</p>
 								<p class="menu-price">{{i.price}}</p>
-
 							</div>
-						{% endif %}
-					{% endfor %}
-			</div>
-			<div class="col-md-4">
-				<h2>Entrees</h2>
-					{% for i in items %}
-						{% if i.course == 'Entree' %}
-						<div class="menu-item">
-							<h3>{{i.name}}</h3>
-							<p>{{i.description}}</p>
-							<p class="menu-price">{{i.price}}</p>
-
-						</div>
-						{% endif %}
-					{% endfor %}
-			</div>
-			<div class="col-md-3">
-				<h2>Desserts</h2>
-					{% for i in items %}
-						{% if i.course == 'Dessert' %}
-						<div class="menu-item">
-							<h3>{{i.name}}</h3>
-							<p>{{i.description}}</p>
-							<p class="menu-price">{{i.price}}</p>
-
-						</div>
-						{% endif %}
-					{% endfor %}
-				<h2>Beverages</h2>
-					{% for i in items %}
-						{% if i.course == 'Beverage' %}
-						<div class="menu-item">
-							<h3>{{i.name}}</h3>
-							<p>{{i.description}}</p>
-							<p class="menu-price">{{i.price}}</p>
-
-						</div>
-						{% endif %}
-					{% endfor %}
+						{% endfor %}
 			</div>
 			<div class="col-md-1"></div>
 		</div>
