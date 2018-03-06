@@ -70,8 +70,8 @@
 					<h3>{{i.name}}</h3>
 					<p>{{i.description}}</p>
 					<p class="menu-price">{{i.price}}</p>
-					<a href='{{url_for('editMenuItem', category_id = category.id, menu_id=i.id ) }}'>Edit</a> |
-					<a href='{{url_for('deleteMenuItem', category_id = category.id, menu_id=i.id ) }}'>Delete</a>
+					<a href='{{url_for('editItem', category_id = category.id, item_id=i.id ) }}'>Edit</a> |
+					<a href='{{url_for('deleteItem', category_id = category.id, item_id=i.id ) }}'>Delete</a>
 				</div>
 			{% endfor %}
 	</div>
@@ -82,8 +82,8 @@
 					<h3>{{i.name}}</h3>
 					<p>{{i.description}}</p>
 					<p class="menu-price">{{i.price}}</p>
-					<a href='{{url_for('editMenuItem', category_id = category.id, menu_id=i.id ) }}'>Edit</a> |
-					<a href='{{url_for('deleteMenuItem', category_id = category.id, menu_id=i.id ) }}'>Delete</a>
+					<a href='{{url_for('editItem', category_id = category_id, item_id=i.id ) }}'>Edit</a> |
+					<a href='{{url_for('deleteItem', category_id = category_id, item_id=i.id ) }}'>Delete</a>
 				</div>
 			{% endfor %}
 	</div>
@@ -95,8 +95,8 @@
 					<h3>{{i.name}}</h3>
 					<p>{{i.description}}</p>
 					<p class="menu-price">{{i.price}}</p>
-					<a href='{{url_for('editMenuItem', category_id = category.id, menu_id=i.id ) }}'>Edit</a> |
-					<a href='{{url_for('deleteMenuItem', category_id = category.id, menu_id=i.id ) }}'>Delete</a>
+					<a href='{{url_for('editItem', category_id = category.id, item_id=i.id ) }}'>Edit</a> |
+					<a href='{{url_for('deleteItem', category_id = category.id, item_id=i.id ) }}'>Delete</a>
 				</div>
 			{% endfor %}
 	</div>
@@ -107,8 +107,8 @@
 					<h3>{{i.name}}</h3>
 					<p>{{i.description}}</p>
 					<p class="menu-price">{{i.price}}</p>
-					<a href='{{url_for('editMenuItem', category_id = category.id, menu_id=i.id ) }}'>Edit</a> |
-					<a href='{{url_for('deleteMenuItem', category_id = category.id, menu_id=i.id ) }}'>Delete</a>
+					<a href='{{url_for('editItem', category_id = category.id, item_id=i.id ) }}'>Edit</a> |
+					<a href='{{url_for('deleteItem', category_id = category.id, item_id=i.id ) }}'>Delete</a>
 				</div>
 			{% endfor %}
 	</div>
