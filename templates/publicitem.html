@@ -34,6 +34,8 @@
 		</div>
 	</div>
 	{% if items !=[] %}
+		<!-- {% for i in items %} -->
+		{% if i.name == 'Beekeeping Kits' %}
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-3">
@@ -46,7 +48,8 @@
 						</div>
 					{% endfor %}
 			</div>
-			<div class="col-md-4">
+		{% endif %}
+			<!-- <div class="col-md-4">
 				<h2>Loaded Supers</h2>
 					{% for i in items %}
 						<div class="menu-item">
@@ -85,7 +88,8 @@
 							<p class="menu-price">{{i.price}}</p>
 						</div>
 					{% endfor %}
-			</div>
+			</div> -->
+		<!-- {% endfor %} -->
 			<div class="col-md-1"></div>
 		</div>
 	{% endif %}
