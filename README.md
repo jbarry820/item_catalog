@@ -68,3 +68,7 @@ Category Items JSON: `/category/<int:category_id>/item/JSON`
 
 Category Item JSON: `/category/<int:category_id>/item/<int:item_id>/JSON`
     - Displays a specific category item.
+
+## Credits
+I modified the code from the restaurant application in the Udacity
+Full Stack WEb Developer Nanodegree Program Lesson 13 HTTP in the Real World Restaurant Applicaton. I also modified the readme.md file from https://github.com/sagarchoudhary96/P5-Item-Catalog/blob/master/README.md
