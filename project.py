@@ -75,8 +75,9 @@ def fbconnect():
     '''
     token = result.split(',')[0].split(':')[1].replace('"', '')
 
-    url = 'https://graph.facebook.com/v2.8/me?access_token=%s&fields=' \
-          'name,id,email' % token
+    # url = 'https://graph.facebook.com/v2.8/me?access_token=%s&fields=' \
+    #       'name,id,email' % token
+    url = 'https://graph.facebook.com/v2.8/me?access_token=%s&fields=name,id,email' % token
     h = httplib2.Http()
     result = h.request(url, 'GET')[1]
     # print "url sent for API access:%s"% url
@@ -91,8 +92,9 @@ def fbconnect():
     login_session['access_token'] = token
 
     # Get user picture
-    url = 'https://graph.facebook.com/v2.8/me/picture?access_token=' \
-          '%s&redirect=0&height=200&width=200' % token
+    # url = 'https://graph.facebook.com/v2.8/me/picture?access_token=' \
+    #       '%s&redirect=0&height=200&width=200' % token
+    url = 'https://graph.facebook.com/v2.8/me/picture?access_token=%s&redirect=0&height=200&width=200' % token
     h = httplib2.Http()
     result = h.request(url, 'GET')[1]
     data = json.loads(result)
@@ -112,11 +114,12 @@ def fbconnect():
     output += '!</h1>'
     output += '<img src="'
     output += login_session['picture']
-    output += ' " style = "width: 300px;' \
-              ' height: 300px;' \
-              'border-radius: 150px;' \
-              '-webkit-border-radius: 150px;' \
-              '-moz-border-radius: 150px;"> '
+    # output += ' " style = "width: 300px;' \
+    #           ' height: 300px;' \
+    #           'border-radius: 150px;' \
+    #           '-webkit-border-radius: 150px;' \
+    #           '-moz-border-radius: 150px;"> '
+    output += ' " style = "width: 300px; height: 300px;border-radius: 150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;"> '
 
     flash("Now logged in as %s" % login_session['username'])
     return output
